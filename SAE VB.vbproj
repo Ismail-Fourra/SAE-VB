@@ -130,6 +130,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="acceuil.ico" />
+    <Content Include="BackCard.png" />
+    <None Include="Resources\BackCard.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
