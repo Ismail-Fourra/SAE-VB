@@ -131,6 +131,16 @@
   <ItemGroup>
     <Content Include="acceuil.ico" />
     <Content Include="BackCard.png" />
+    <Content Include="Resources\Card0.png" />
+    <Content Include="Resources\Card1.png" />
+    <Content Include="Resources\Card2.png" />
+    <Content Include="Resources\Card3.png" />
+    <Content Include="Resources\Card4.png" />
+    <Content Include="Resources\Card5.png" />
+    <Content Include="Resources\Card6.png" />
+    <Content Include="Resources\Card7.png" />
+    <Content Include="Resources\Card8.png" />
+    <Content Include="Resources\Card9.png" />
     <None Include="Resources\BackCard.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
