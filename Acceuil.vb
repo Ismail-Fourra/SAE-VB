@@ -1,7 +1,6 @@
 ﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class Acceuil
-
     Dim joueursConnus As New List(Of String)
 
     Private Sub Acceuil_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
