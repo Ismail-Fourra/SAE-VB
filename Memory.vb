@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports System.Linq
 
 Public Class FormMemory
 
@@ -6,40 +7,27 @@ Public Class FormMemory
     Private random As New Random()
     Private cartes As New List(Of PictureBox)()
 
-    Dim tempsRestant As Integer = 60
-    Private premierClique As PictureBox = Nothing
-    Private deuxiemeClique As PictureBox = Nothing
+    Private tempsRestant As Integer = 60
+    Private cartesRevelees As New List(Of PictureBox)()
+    Private cartesTrouvees As New List(Of PictureBox)()
+    Private tentativeRatée As Boolean = False
 
     Private Sub FormMemory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+
+
         imagesCartes.Clear()
+        cartes.Clear()
+        cartesRevelees.Clear()
+        cartesTrouvees.Clear()
 
-        ' Ajouter chaque image deux fois
-        imagesCartes.Add(My.Resources.Card0)
-        imagesCartes.Add(My.Resources.Card0)
-        imagesCartes.Add(My.Resources.Card1)
-        imagesCartes.Add(My.Resources.Card1)
-        imagesCartes.Add(My.Resources.Card2)
-        imagesCartes.Add(My.Resources.Card2)
-        imagesCartes.Add(My.Resources.Card3)
-        imagesCartes.Add(My.Resources.Card3)
-        imagesCartes.Add(My.Resources.Card4)
-        imagesCartes.Add(My.Resources.Card4)
-        imagesCartes.Add(My.Resources.Card5)
-        imagesCartes.Add(My.Resources.Card5)
-        imagesCartes.Add(My.Resources.Card6)
-        imagesCartes.Add(My.Resources.Card6)
-        imagesCartes.Add(My.Resources.Card7)
-        imagesCartes.Add(My.Resources.Card7)
-        imagesCartes.Add(My.Resources.Card8)
-        imagesCartes.Add(My.Resources.Card8)
-        imagesCartes.Add(My.Resources.Card9)
-        imagesCartes.Add(My.Resources.Card9)
-
-        ' Vérifier le nombre d'images
-        If imagesCartes.Count <> 20 Then
-            MsgBox("Erreur : 20 images doivent être chargées.")
-            Exit Sub
-        End If
+        ' Ajouter chaque image quatre fois pour former des carrés
+        For i As Integer = 0 To 4
+            For j As Integer = 1 To 4
+                imagesCartes.Add(CType(My.Resources.ResourceManager.GetObject("Flag" & i), Image))
+            Next
+        Next
 
         ' Mélanger les images
         imagesCartes = imagesCartes.OrderBy(Function(x) random.Next()).ToList()
@@ -50,25 +38,23 @@ Public Class FormMemory
             Dim picBox As PictureBox = Me.Controls.Find(picBoxName, True).FirstOrDefault()
 
             If picBox IsNot Nothing Then
-                Debug.Print("PictureBox trouvée : " & picBox.Name)
                 cartes.Add(picBox)
                 picBox.Tag = imagesCartes(i - 1)
-                picBox.Image = My.Resources.BackCard
+                picBox.Image = My.Resources.BackCardFlags
                 picBox.SizeMode = PictureBoxSizeMode.Zoom
                 picBox.Size = New Size(100, 150)
                 AddHandler picBox.Click, AddressOf Carte_Click
-            Else
-                Debug.Print("PictureBox non trouvée : " & picBoxName)
             End If
         Next
 
+        ' Initialiser le Timer
         Timer1.Interval = 1000
         Timer1.Start()
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         tempsRestant -= 1
-        LblTemps.Text = "Temps : " & tempsRestant & "s"
+        LblTemps.Text = $"Temps : {tempsRestant}s"
 
         If tempsRestant <= 0 Then
             Timer1.Stop()
@@ -79,33 +65,47 @@ Public Class FormMemory
     Private Sub Carte_Click(sender As Object, e As EventArgs)
         Dim carteCliquee As PictureBox = CType(sender, PictureBox)
 
-        If carteCliquee.Tag Is Nothing OrElse deuxiemeClique IsNot Nothing Then Exit Sub
+        ' Ignorer si déjà trouvé ou en attente de masquage
+        If cartesTrouvees.Contains(carteCliquee) OrElse tentativeRatée Then Exit Sub
 
+        ' Révéler la carte cliquée
         carteCliquee.Image = CType(carteCliquee.Tag, Image)
+        cartesRevelees.Add(carteCliquee)
 
-        If premierClique Is Nothing Then
-            premierClique = carteCliquee
-        Else
-            deuxiemeClique = carteCliquee
+        ' Si seule, attendre la suivante
+        If cartesRevelees.Count = 1 Then Exit Sub
 
-            If premierClique.Tag.Equals(deuxiemeClique.Tag) Then
-                premierClique = Nothing
-                deuxiemeClique = Nothing
-            Else
-                Timer2.Interval = 1000
-                Timer2.Start()
-            End If
+        ' Vérifier correspondance des cartes révélées
+        Dim premierTag = cartesRevelees(0).Tag
+        Dim sontIdentiques As Boolean = cartesRevelees.All(Function(c) c.Tag.Equals(premierTag))
+
+        If cartesRevelees.Count >= 2 AndAlso sontIdentiques Then
+            ' Dès qu'on a 2, 3 ou 4 cartes identiques, on les valide définitivement
+            For Each carte In cartesRevelees
+                carte.Enabled = False
+                cartesTrouvees.Add(carte)
+            Next
+            cartesRevelees.Clear()
+            tentativeRatée = False
+        ElseIf cartesRevelees.Count >= 2 Then
+            ' Sinon, masquer après un court délai
+            tentativeRatée = True
+            Timer2.Interval = 500
+            Timer2.Start()
         End If
     End Sub
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         Timer2.Stop()
-
-        If premierClique IsNot Nothing Then premierClique.Image = My.Resources.BackCard
-        If deuxiemeClique IsNot Nothing Then deuxiemeClique.Image = My.Resources.BackCard
-
-        premierClique = Nothing
-        deuxiemeClique = Nothing
+        ' Masquer uniquement les cartes non validées
+        For Each carte In cartesRevelees
+            If Not cartesTrouvees.Contains(carte) Then carte.Image = My.Resources.BackCardFlags
+        Next
+        cartesRevelees.Clear()
+        tentativeRatée = False
     End Sub
 
+    Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs)
+
+    End Sub
 End Class
