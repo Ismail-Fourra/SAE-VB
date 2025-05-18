@@ -13,10 +13,6 @@ Public Class FormMemory
     Private tentativeRatée As Boolean = False
     Private nbCliques As Integer = 0
     Private Sub FormMemory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
-
-
         imagesCartes.Clear()
         cartes.Clear()
         cartesRevelees.Clear()
@@ -48,7 +44,7 @@ Public Class FormMemory
         Next
 
         ' Initialiser le Timer
-        Timer1.Interval = 10000
+        Timer1.Interval = 1000
         Timer1.Start()
     End Sub
     ''Private Sub FormMemory_LoadTest(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -102,6 +98,8 @@ Public Class FormMemory
         If tempsRestant <= 0 Then
             Timer1.Stop()
             MsgBox("Temps écoulé")
+            Me.Close()
+            Acceuil.Show()
         End If
     End Sub
     Private Function ToGrayScale(originalImage As Bitmap) As Bitmap

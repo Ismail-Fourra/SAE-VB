@@ -131,6 +131,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="acceuil.ico" />
+    <None Include="Resources\Fond MemoryFlags.png" />
+    <None Include="Resources\Fond MemoeyFlags.bmp" />
     <None Include="Resources\Flag3.png" />
     <None Include="Resources\Flag2.png" />
     <None Include="Resources\Flag1.png" />
