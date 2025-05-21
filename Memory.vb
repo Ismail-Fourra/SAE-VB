@@ -164,4 +164,14 @@ Public Class FormMemory
         tentativeRatée = False
     End Sub
 
+    Private Sub BtnAbandonner_Click(sender As Object, e As EventArgs) Handles BtnAbandonner.Click
+        Dim result As DialogResult = MessageBox.Show("Êtes-vous sûr de vouloir abandonner la partie ?", "Abandonner", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If result = DialogResult.Yes Then
+            ' Redirection vers l'accueil
+            Dim accueil As New Acceuil()
+            accueil.Show()
+            Me.Close() ' Ferme la fenêtre actuelle (le jeu)
+        End If
+    End Sub
 End Class

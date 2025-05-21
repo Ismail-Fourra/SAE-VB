@@ -11,22 +11,29 @@
     End Sub
 
     Private Sub Acceuil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        ' Prépare la liste des joueurs
         cbNomJoueur.Items.Clear()
+        BtnJouer.Enabled = False ' Grise le bouton au démarrage
+    End Sub
+
+    Private Sub cbNomJoueur_TextChanged(sender As Object, e As EventArgs) Handles cbNomJoueur.TextChanged
+        ' Active/désactive le bouton Jouer automatiquement
+        BtnJouer.Enabled = cbNomJoueur.Text.Length >= 3
     End Sub
 
     Private Sub BtnJouer_Click(sender As Object, e As EventArgs) Handles BtnJouer.Click
+        ' Vérification finale au clic
         If cbNomJoueur.Text.Length < 3 Then
             MessageBox.Show("Le nom du joueur doit contenir au moins 3 caractères.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Return
+            Exit Sub
         End If
 
+        ' Ajout du joueur à la liste s’il est nouveau
         If Not joueursConnus.Contains(cbNomJoueur.Text) Then
             joueursConnus.Add(cbNomJoueur.Text)
             cbNomJoueur.Items.Add(cbNomJoueur.Text)
         End If
 
+        ' Ouvre le jeu
         Dim f As New FormMemory()
         f.Show()
         Me.Hide()
