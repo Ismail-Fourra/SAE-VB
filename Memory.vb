@@ -46,6 +46,14 @@ Public Class FormMemory
         ' Initialiser le Timer
         Timer1.Interval = 1000
         Timer1.Start()
+
+        ' Messag de victoire
+        If (cartesTrouvees.Count = cartes.Count) Then
+            MsgBox("Vous avez gagné !" & vbCr & "Vous avez cliqué " & nbCliques & " fois")
+            Timer1.Stop()
+            Me.Close()
+        End If
+
     End Sub
     ''Private Sub FormMemory_LoadTest(sender As Object, e As EventArgs) Handles MyBase.Load
     ''    imagesCartes.Clear()
@@ -88,10 +96,6 @@ Public Class FormMemory
 
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        If (cartesTrouvees.Count = cartes.Count) Then
-            MsgBox("Vous avez gagné !" & vbCr & "Vous avez cliqué " & nbCliques & " fois")
-            Timer1.Stop()
-        End If
         tempsRestant -= 1
         LblTemps.Text = $"Temps : {tempsRestant}s"
 
@@ -118,8 +122,8 @@ Public Class FormMemory
         nbCliques += 1
         Dim carteCliquee As PictureBox = CType(sender, PictureBox)
 
-        ' Ignorer si déjà trouvé ou en attente de masquage
-        If cartesTrouvees.Contains(carteCliquee) OrElse tentativeRatée Then Exit Sub
+        ' Ignorer si déjà trouvée, en attente de masquage, ou déjà cliquée dans cette tentative
+        If cartesTrouvees.Contains(carteCliquee) OrElse tentativeRatée OrElse cartesRevelees.Contains(carteCliquee) Then Exit Sub
 
         ' Révéler la carte cliquée
         carteCliquee.Image = CType(My.Resources.ResourceManager.GetObject(carteCliquee.Tag.ToString()), Image)
@@ -136,23 +140,19 @@ Public Class FormMemory
             Timer2.Interval = 500
             Timer2.Start()
         End If
+
         If cartesRevelees.Count = 4 AndAlso sontIdentiques Then
-            ' Dès qu'on a 2, 3 ou 4 cartes identiques, on les valide définitivement
+            ' Dès qu'on a 4 cartes identiques, on les valide définitivement
             For Each carte In cartesRevelees
                 carte.Enabled = False
-                'carte.BackColor = Color.Black
                 carte.Image = ToGrayScale(CType(carte.Image, Bitmap))
                 cartesTrouvees.Add(carte)
             Next
             cartesRevelees.Clear()
             tentativeRatée = False
-            'ElseIf cartesRevelees.Count = 4 Then
-            '    ' Sinon, masquer après un court délai
-            '    tentativeRatée = True
-            '    Timer2.Interval = 500
-            '    Timer2.Start()
         End If
     End Sub
+
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         Timer2.Stop()
