@@ -12,7 +12,7 @@ Public Class FormMemory
     Private cartesTrouvees As New List(Of PictureBox)()
     Private tentativeRatée As Boolean = False
     Private nbCliques As Integer = 0
-    Private player As New System.Media.SoundPlayer(My.Resources.Maroc_Song)
+    Private player As New System.Media.SoundPlayer(My.Resources.Maroc_song1)
 
     Private Sub FormMemory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         imagesCartes.Clear()
@@ -37,13 +37,18 @@ Public Class FormMemory
 
             If picBox IsNot Nothing Then
                 cartes.Add(picBox)
-                picBox.Tag = "Flag" & ((i - 1) \ 4)
+
+                ' Associer une image aléatoire à chaque carte
+                Dim img As Image = imagesCartes(i - 1)
+                picBox.Tag = img ' <-- stocker l'image directement dans le Tag
                 picBox.Image = My.Resources.BackCardFlags
                 picBox.SizeMode = PictureBoxSizeMode.Zoom
                 picBox.Size = New Size(100, 150)
+
                 AddHandler picBox.Click, AddressOf Carte_Click
             End If
         Next
+
 
         ' Initialiser le Timer
         Timer1.Interval = 1000
@@ -128,15 +133,15 @@ Public Class FormMemory
         If cartesTrouvees.Contains(carteCliquee) OrElse tentativeRatée OrElse cartesRevelees.Contains(carteCliquee) Then Exit Sub
 
         ' Révéler la carte cliquée
-        carteCliquee.Image = CType(My.Resources.ResourceManager.GetObject(carteCliquee.Tag.ToString()), Image)
+        carteCliquee.Image = CType(carteCliquee.Tag, Image)
         cartesRevelees.Add(carteCliquee)
 
         ' Si seule, attendre la suivante
         If cartesRevelees.Count = 1 Then Exit Sub
 
         ' Vérifier correspondance des cartes révélées
-        Dim premierTag = cartesRevelees(0).Tag.ToString()
-        Dim sontIdentiques As Boolean = cartesRevelees.All(Function(c) c.Tag.ToString() = premierTag)
+        Dim premierImage = CType(cartesRevelees(0).Tag, Image)
+        Dim sontIdentiques As Boolean = cartesRevelees.All(Function(c) c.Tag Is premierImage)
         If Not sontIdentiques Then
             tentativeRatée = True
             Timer2.Interval = 500
@@ -144,13 +149,6 @@ Public Class FormMemory
         End If
 
         If cartesRevelees.Count = 4 AndAlso sontIdentiques Then
-            ' ✅ Stopper la musique si elle joue déjà
-            player.Stop()
-
-            ' ✅ Jouer la musique
-            player.Play()
-
-            ' ✅ Valider définitivement les cartes
             For Each carte In cartesRevelees
                 carte.Enabled = False
                 carte.Image = ToGrayScale(CType(carte.Image, Bitmap))

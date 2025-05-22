@@ -133,9 +133,9 @@ Namespace My.Resources
         '''<summary>
         '''  Recherche une ressource localisée de type System.IO.UnmanagedMemoryStream semblable à System.IO.MemoryStream.
         '''</summary>
-        Friend ReadOnly Property Maroc_Song() As System.IO.UnmanagedMemoryStream
+        Friend ReadOnly Property Maroc_song1() As System.IO.UnmanagedMemoryStream
             Get
-                Return ResourceManager.GetStream("Maroc Song", resourceCulture)
+                Return ResourceManager.GetStream("Maroc_song1", resourceCulture)
             End Get
         End Property
     End Module

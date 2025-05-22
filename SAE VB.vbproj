@@ -80,6 +80,11 @@
       <DependentUpon>Acceuil.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Scores.Designer.vb">
       <DependentUpon>Scores.vb</DependentUpon>
     </Compile>
@@ -97,11 +102,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="My Project\Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="My Project\Settings.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -140,7 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="acceuil.ico" />
-    <None Include="Resources\DYSTINCT-Tek-Tek-ft.-MHD-_prod.-YAM_-Unleaded-_-DYSTINCT_-ديستانكت-تك-تك-مع-م-اش-د.wav" />
+    <None Include="Resources\Maroc_song.wav" />
     <None Include="Resources\Fond MemoryFlags.png" />
     <None Include="Resources\Flag3.png" />
     <None Include="Resources\Flag2.png" />
