@@ -12,6 +12,8 @@ Public Class FormMemory
     Private cartesTrouvees As New List(Of PictureBox)()
     Private tentativeRatée As Boolean = False
     Private nbCliques As Integer = 0
+    Private player As New System.Media.SoundPlayer(My.Resources.Maroc_Song)
+
     Private Sub FormMemory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         imagesCartes.Clear()
         cartes.Clear()
@@ -142,7 +144,13 @@ Public Class FormMemory
         End If
 
         If cartesRevelees.Count = 4 AndAlso sontIdentiques Then
-            ' Dès qu'on a 4 cartes identiques, on les valide définitivement
+            ' ✅ Stopper la musique si elle joue déjà
+            player.Stop()
+
+            ' ✅ Jouer la musique
+            player.Play()
+
+            ' ✅ Valider définitivement les cartes
             For Each carte In cartesRevelees
                 carte.Enabled = False
                 carte.Image = ToGrayScale(CType(carte.Image, Bitmap))
