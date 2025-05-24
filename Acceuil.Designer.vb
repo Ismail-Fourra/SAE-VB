@@ -30,26 +30,27 @@ Partial Class Acceuil
         Me.LblNom = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblJeuMemory = New System.Windows.Forms.Label()
+        Me.BtnParamètres = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'cbNomJoueur
         '
         Me.cbNomJoueur.FormattingEnabled = True
-        Me.cbNomJoueur.Location = New System.Drawing.Point(205, 210)
-        Me.cbNomJoueur.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cbNomJoueur.Location = New System.Drawing.Point(273, 258)
+        Me.cbNomJoueur.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cbNomJoueur.Name = "cbNomJoueur"
-        Me.cbNomJoueur.Size = New System.Drawing.Size(157, 21)
+        Me.cbNomJoueur.Size = New System.Drawing.Size(208, 24)
         Me.cbNomJoueur.TabIndex = 1
         '
         'BtnJouer
         '
         Me.BtnJouer.BackColor = System.Drawing.Color.Indigo
         Me.BtnJouer.ForeColor = System.Drawing.Color.White
-        Me.BtnJouer.Location = New System.Drawing.Point(30, 12)
-        Me.BtnJouer.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnJouer.Location = New System.Drawing.Point(40, 15)
+        Me.BtnJouer.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnJouer.Name = "BtnJouer"
-        Me.BtnJouer.Size = New System.Drawing.Size(75, 32)
+        Me.BtnJouer.Size = New System.Drawing.Size(100, 39)
         Me.BtnJouer.TabIndex = 2
         Me.BtnJouer.Text = "Jouer"
         Me.BtnJouer.UseVisualStyleBackColor = False
@@ -58,10 +59,10 @@ Partial Class Acceuil
         '
         Me.BtnQuitter.BackColor = System.Drawing.Color.Red
         Me.BtnQuitter.ForeColor = System.Drawing.Color.White
-        Me.BtnQuitter.Location = New System.Drawing.Point(30, 50)
-        Me.BtnQuitter.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnQuitter.Location = New System.Drawing.Point(40, 62)
+        Me.BtnQuitter.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnQuitter.Name = "BtnQuitter"
-        Me.BtnQuitter.Size = New System.Drawing.Size(156, 30)
+        Me.BtnQuitter.Size = New System.Drawing.Size(208, 37)
         Me.BtnQuitter.TabIndex = 3
         Me.BtnQuitter.Text = "Quitter"
         Me.BtnQuitter.UseVisualStyleBackColor = False
@@ -70,10 +71,10 @@ Partial Class Acceuil
         '
         Me.BtnScores.BackColor = System.Drawing.Color.Gray
         Me.BtnScores.ForeColor = System.Drawing.Color.White
-        Me.BtnScores.Location = New System.Drawing.Point(110, 12)
-        Me.BtnScores.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnScores.Location = New System.Drawing.Point(147, 15)
+        Me.BtnScores.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BtnScores.Name = "BtnScores"
-        Me.BtnScores.Size = New System.Drawing.Size(76, 32)
+        Me.BtnScores.Size = New System.Drawing.Size(101, 39)
         Me.BtnScores.TabIndex = 4
         Me.BtnScores.Text = "Scores"
         Me.BtnScores.UseVisualStyleBackColor = False
@@ -82,10 +83,9 @@ Partial Class Acceuil
         '
         Me.LblNom.AutoSize = True
         Me.LblNom.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblNom.Location = New System.Drawing.Point(208, 169)
-        Me.LblNom.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LblNom.Location = New System.Drawing.Point(277, 208)
         Me.LblNom.Name = "LblNom"
-        Me.LblNom.Size = New System.Drawing.Size(134, 21)
+        Me.LblNom.Size = New System.Drawing.Size(166, 28)
         Me.LblNom.TabIndex = 5
         Me.LblNom.Text = "Nom du joueur :"
         '
@@ -94,10 +94,10 @@ Partial Class Acceuil
         Me.Panel1.Controls.Add(Me.BtnJouer)
         Me.Panel1.Controls.Add(Me.BtnScores)
         Me.Panel1.Controls.Add(Me.BtnQuitter)
-        Me.Panel1.Location = New System.Drawing.Point(175, 262)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Location = New System.Drawing.Point(233, 322)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(207, 102)
+        Me.Panel1.Size = New System.Drawing.Size(276, 126)
         Me.Panel1.TabIndex = 6
         '
         'lblJeuMemory
@@ -105,26 +105,40 @@ Partial Class Acceuil
         Me.lblJeuMemory.AutoSize = True
         Me.lblJeuMemory.Font = New System.Drawing.Font("Impact", 36.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblJeuMemory.ForeColor = System.Drawing.Color.White
-        Me.lblJeuMemory.Location = New System.Drawing.Point(140, 65)
-        Me.lblJeuMemory.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblJeuMemory.Location = New System.Drawing.Point(187, 80)
         Me.lblJeuMemory.Name = "lblJeuMemory"
-        Me.lblJeuMemory.Size = New System.Drawing.Size(318, 60)
+        Me.lblJeuMemory.Size = New System.Drawing.Size(398, 75)
         Me.lblJeuMemory.TabIndex = 7
         Me.lblJeuMemory.Text = "Jeu du Memory"
         '
+        'BtnParamètres
+        '
+        Me.BtnParamètres.BackColor = System.Drawing.Color.Transparent
+        Me.BtnParamètres.BackgroundImage = Global.SAE_VB.My.Resources.Resources.parametres
+        Me.BtnParamètres.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnParamètres.ForeColor = System.Drawing.Color.Transparent
+        Me.BtnParamètres.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.BtnParamètres.Location = New System.Drawing.Point(23, 11)
+        Me.BtnParamètres.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnParamètres.Name = "BtnParamètres"
+        Me.BtnParamètres.Size = New System.Drawing.Size(48, 41)
+        Me.BtnParamètres.TabIndex = 8
+        Me.BtnParamètres.UseVisualStyleBackColor = False
+        '
         'Acceuil
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(586, 449)
+        Me.ClientSize = New System.Drawing.Size(781, 553)
+        Me.Controls.Add(Me.BtnParamètres)
         Me.Controls.Add(Me.lblJeuMemory)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.LblNom)
         Me.Controls.Add(Me.cbNomJoueur)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Acceuil"
         Me.Text = "Acceuil"
         Me.Panel1.ResumeLayout(False)
@@ -140,4 +154,5 @@ Partial Class Acceuil
     Friend WithEvents LblNom As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents lblJeuMemory As Label
+    Friend WithEvents BtnParamètres As Button
 End Class

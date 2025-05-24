@@ -35,8 +35,12 @@
 
         ' Ouvre le jeu
         Dim f As New FormMemory()
+        f.NomJoueur = cbNomJoueur.Text
+        f.Owner = Me
         f.Show()
+
         Me.Hide()
+
     End Sub
 
     Private Sub BtnQuitter_Click(sender As Object, e As EventArgs) Handles BtnQuitter.Click

@@ -138,5 +138,15 @@ Namespace My.Resources
                 Return ResourceManager.GetStream("Maroc_song1", resourceCulture)
             End Get
         End Property
+        
+        '''<summary>
+        '''  Recherche une ressource localisée de type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property parametres() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("parametres", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
     End Module
 End Namespace

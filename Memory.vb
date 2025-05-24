@@ -3,12 +3,11 @@ Imports System.Linq
 
 Public Class FormMemory
 
-
     Private imagesCartes As New List(Of Image)()
     Private random As New Random()
     Private cartes As New List(Of PictureBox)()
 
-    Private tempsRestant As Integer = 60
+    Private tempsRestant As Integer = 120
     Private cartesRevelees As New List(Of PictureBox)()
     Private cartesTrouvees As New List(Of PictureBox)()
     Private tentativeRatée As Boolean = False
@@ -17,12 +16,16 @@ Public Class FormMemory
 
     Private imagesAssociees As New Dictionary(Of PictureBox, Image)()
 
+    Public Property NomJoueur As String
+
     Private Sub FormMemory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         imagesCartes.Clear()
         cartes.Clear()
         cartesRevelees.Clear()
         cartesTrouvees.Clear()
         imagesAssociees.Clear()
+
+        lblNomJoueur.Text = NomJoueur
 
         Dim nomsCartes As New List(Of String)
 
@@ -137,10 +140,15 @@ Public Class FormMemory
 
         If cartesTrouvees.Count = cartes.Count Then
             Timer1.Stop() ' Arrêter le chrono si gagné
-            MsgBox("Bravo ! Vous avez gagné en " & nbCliques & " clics.")
+
+            Dim tempsJoué As Integer = 60 - tempsRestant
+            MsgBox("🎉 Réussi en " & tempsJoué & " secondes !")
+            GestionScores.EnregistrerScore(NomJoueur, tempsJoué)
+            ' Retour à l'accueil
             Me.Close()
             Acceuil.Show()
         End If
+
     End Sub
 
 
@@ -158,10 +166,10 @@ Public Class FormMemory
         Dim result As DialogResult = MessageBox.Show("Êtes-vous sûr de vouloir abandonner la partie ?", "Abandonner", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If result = DialogResult.Yes Then
+            Acceuil.cbNomJoueur.Text = ""
             ' Redirection vers l'accueil
-            Dim accueil As New Acceuil()
-            accueil.Show()
-            Me.Close() ' Ferme la fenêtre actuelle (le jeu)
+            Acceuil.Show()
+            Me.Close()
         End If
     End Sub
 End Class
