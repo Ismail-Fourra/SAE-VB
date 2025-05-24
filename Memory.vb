@@ -3,6 +3,7 @@ Imports System.Linq
 
 Public Class FormMemory
 
+
     Private imagesCartes As New List(Of Image)()
     Private random As New Random()
     Private cartes As New List(Of PictureBox)()
@@ -14,21 +15,35 @@ Public Class FormMemory
     Private nbCliques As Integer = 0
     Private player As New System.Media.SoundPlayer(My.Resources.Maroc_song1)
 
+    Private imagesAssociees As New Dictionary(Of PictureBox, Image)()
+
     Private Sub FormMemory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         imagesCartes.Clear()
         cartes.Clear()
         cartesRevelees.Clear()
         cartesTrouvees.Clear()
+        imagesAssociees.Clear()
 
-        ' Ajouter chaque image quatre fois pour former des carrés
+        Dim nomsCartes As New List(Of String)
+
         For i As Integer = 0 To 4
             For j As Integer = 1 To 4
+                nomsCartes.Add("Flag" & i)
                 imagesCartes.Add(CType(My.Resources.ResourceManager.GetObject("Flag" & i), Image))
             Next
         Next
 
-        ' Mélanger les images
-        imagesCartes = imagesCartes.OrderBy(Function(x) random.Next()).ToList()
+        ' Mélange via des indices
+        Dim indices As New List(Of Integer)(Enumerable.Range(0, nomsCartes.Count))
+        indices = indices.OrderBy(Function() random.Next()).ToList()
+
+        Dim nomsMélangés As New List(Of String)
+        Dim imagesMélangées As New List(Of Image)
+
+        For Each index In indices
+            nomsMélangés.Add(nomsCartes(index))
+            imagesMélangées.Add(imagesCartes(index))
+        Next
 
         ' Associer les images aux PictureBox
         For i As Integer = 1 To 20
@@ -37,64 +52,23 @@ Public Class FormMemory
 
             If picBox IsNot Nothing Then
                 cartes.Add(picBox)
-                picBox.Tag = "Flag" & ((i - 1) \ 4)
+                picBox.Tag = nomsMélangés(i - 1)
+                imagesAssociees(picBox) = imagesMélangées(i - 1)
+
                 picBox.Image = My.Resources.BackCardFlags
                 picBox.SizeMode = PictureBoxSizeMode.Zoom
                 picBox.Size = New Size(100, 150)
+
                 AddHandler picBox.Click, AddressOf Carte_Click
             End If
         Next
 
-        ' Initialiser le Timer
         Timer1.Interval = 1000
         Timer1.Start()
 
-        ' Messag de victoire
-        If (cartesTrouvees.Count = cartes.Count) Then
-            MsgBox("Vous avez gagné !" & vbCr & "Vous avez cliqué " & nbCliques & " fois")
-            Timer1.Stop()
-            Me.Close()
-        End If
-
+        Timer2.Interval = 500  ' Ce timer reste pour le masquage des cartes
+        Timer2.Stop()
     End Sub
-    ''Private Sub FormMemory_LoadTest(sender As Object, e As EventArgs) Handles MyBase.Load
-    ''    imagesCartes.Clear()
-    ''    cartes.Clear()
-    ''    cartesRevelees.Clear()
-    ''    cartesTrouvees.Clear()
-
-    ''    ' Ajouter chaque image quatre fois pour former des carrés
-    ''    For i As Integer = 0 To 4
-    ''        For j As Integer = 1 To 4
-    ''            imagesCartes.Add(CType(My.Resources.ResourceManager.GetObject("Flag" & i), Image))
-    ''        Next
-    ''    Next
-
-    ''    ' Mélanger les images
-    ''    imagesCartes = imagesCartes.OrderBy(Function(x) random.Next()).ToList()
-
-    ''    ' Associer les images aux PictureBox et les révéler
-    ''    For i As Integer = 1 To 20
-    ''        Dim picBoxName As String = "pbxCarte" & i.ToString()
-    ''        Dim picBox As PictureBox = Me.Controls.Find(picBoxName, True).FirstOrDefault()
-
-    ''        If picBox IsNot Nothing Then
-    ''            cartes.Add(picBox)
-    ''            picBox.Tag = "Flag" & ((i - 1) \ 4)
-    ''            ' Afficher directement la face de la carte
-    ''            picBox.Image = imagesCartes(i - 1)
-    ''            picBox.SizeMode = PictureBoxSizeMode.Zoom
-    ''            picBox.Size = New Size(100, 150)
-    ''            AddHandler picBox.Click, AddressOf Carte_Click
-    ''            ' Ajouter à la liste des cartes révélées pour le test
-    ''            'cartesRevelees.Add(picBox)
-    ''        End If
-    ''    Next
-
-    ''    ' Initialiser le Timer
-    ''    Timer1.Interval = 10000
-    ''    Timer1.Start()
-    ''End Sub
 
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -118,6 +92,7 @@ Public Class FormMemory
             Next
         Next
         Return grayBmp
+
     End Function
 
     Private Sub Carte_Click(sender As Object, e As EventArgs)
@@ -158,6 +133,13 @@ Public Class FormMemory
             Next
             cartesRevelees.Clear()
             tentativeRatée = False
+        End If
+
+        If cartesTrouvees.Count = cartes.Count Then
+            Timer1.Stop() ' Arrêter le chrono si gagné
+            MsgBox("Bravo ! Vous avez gagné en " & nbCliques & " clics.")
+            Me.Close()
+            Acceuil.Show()
         End If
     End Sub
 
