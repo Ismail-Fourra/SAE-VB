@@ -141,8 +141,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="acceuil.ico" />
+    <Content Include="Resources\Flag2Song.wav" />
+    <Content Include="Resources\Flag5.png" />
+    <Content Include="Resources\Flag7.png" />
+    <Content Include="Resources\Flag6.png" />
+    <Content Include="Resources\Flag7Song.wav" />
     <None Include="Resources\parametres-removebg-preview.png" />
-    <None Include="Resources\Maroc_song.wav" />
+    <None Include="Resources\Flag1Song.wav" />
     <None Include="Resources\Fond MemoryFlags.png" />
     <None Include="Resources\Flag3.png" />
     <None Include="Resources\Flag2.png" />

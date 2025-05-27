@@ -12,7 +12,7 @@ Public Class FormMemory
     Private cartesTrouvees As New List(Of PictureBox)()
     Private tentativeRatée As Boolean = False
     Private nbCliques As Integer = 0
-    Private player As New System.Media.SoundPlayer(My.Resources.Maroc_song1)
+    Private player As New System.Media.SoundPlayer(My.Resources.Flag1Song)
     Private nbCarteAtraitter As Integer
     Private imagesAssociees As New Dictionary(Of PictureBox, Image)()
 
@@ -24,6 +24,9 @@ Public Class FormMemory
         cartesRevelees.Clear()
         cartesTrouvees.Clear()
         imagesAssociees.Clear()
+        player.Stop()
+        Timer1.Stop()
+        Timer2.Stop()
 
         lblNomJoueur.Text = NomJoueur
 
@@ -95,8 +98,10 @@ Public Class FormMemory
         For i As Integer = 0 To nombrePaires - 1
             ' Ajouter deux fois chaque carte pour créer une paire
             For j As Integer = 0 To nbCarteAtraitter - 1
+
                 nomsCartes.Add("Flag" & i)
                 imagesCartes.Add(CType(My.Resources.ResourceManager.GetObject("Flag" & i), Image))
+
 
             Next
         Next
@@ -204,8 +209,28 @@ Public Class FormMemory
         End If
 
         If cartesRevelees.Count = nbCarteAtraitter AndAlso sontIdentiques Then
+
+            Select Case cartesRevelees(0).Tag
+                Case "Flag0"
+                    ' Action spécifique pour Flag0
+                    'player = New System.Media.SoundPlayer(My.Resources.Flag0Song)
+                Case "Flag1"
+                    ' Action spécifique pour Flag1 ...
+                    player = New System.Media.SoundPlayer(My.Resources.Flag1Song)
+                Case "Flag2"
+                    player = New System.Media.SoundPlayer(My.Resources.Flag2Song)
+                Case "Flag3"
+                   ' player = New System.Media.SoundPlayer(My.Resources.Flag3Song)
+                Case "Flag4"
+                    'player = New System.Media.SoundPlayer(My.Resources.Flag4Song)
+                Case "Flag5"
+                    'player = New System.Media.SoundPlayer(My.Resources.Flag5Song)
+                Case "Flag6"
+                    'player = New System.Media.SoundPlayer(My.Resources.Flag6Song)
+                Case "Flag7"
+                    player = New System.Media.SoundPlayer(My.Resources.Flag7Song)
+            End Select
             ' ✅ Stopper la musique si elle joue déjà
-            MsgBox(cartesRevelees(0).Tag.ToString())
             player.Stop()
 
             ' ✅ Jouer la musique
@@ -254,9 +279,21 @@ Public Class FormMemory
             Acceuil.Show()
             Me.Close()
         End If
+
     End Sub
 
     Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles pbxCarte29.Click
 
+    End Sub
+
+    Private Sub FormMemory_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        imagesCartes.Clear()
+        cartes.Clear()
+        cartesRevelees.Clear()
+        cartesTrouvees.Clear()
+        imagesAssociees.Clear()
+        player.Stop()
+        Timer1.Stop()
+        Timer2.Stop()
     End Sub
 End Class
