@@ -28,15 +28,75 @@ Public Class FormMemory
         lblNomJoueur.Text = NomJoueur
 
         Dim nomsCartes As New List(Of String)
+        Dim nombreCartes As Integer = 0
 
-        For i As Integer = 0 To 4
-            For j As Integer = 1 To 4
-                nomsCartes.Add("Flag" & i)
-                imagesCartes.Add(CType(My.Resources.ResourceManager.GetObject("Flag" & i), Image))
-            Next
-        Next
+        'Met la bonne difficulté
+        Select Case Acceuil.difficulteChoisie.ToLower()
+            Case "simple"
+                nombreCartes = 10
+                tempsRestant = 60
+            Case "moyen"
+                nombreCartes = 28
+                tempsRestant = 90
+            Case "difficile"
+                nombreCartes = 32
+                tempsRestant = 105
+        End Select
+
+        LblTemps.Text = "Temps : " & tempsRestant
+
+        'LoqmanTest, c'est le code de base mais j'essaye
+        'For i As Integer = 0 To 4
+        'For j As Integer = 1 To 4
+        'nomsCartes.Add("Flag" & i)
+        'imagesCartes.Add(CType(My.Resources.ResourceManager.GetObject("Flag" & i), Image))
+        'Next
+        'Next
 
         ' Mélange via des indices
+        'Dim indices As New List(Of Integer)(Enumerable.Range(0, nomsCartes.Count))
+        'indices = indices.OrderBy(Function() random.Next()).ToList()
+
+        'Dim nomsMélangés As New List(Of String)
+        'Dim imagesMélangées As New List(Of Image)
+
+        'For Each index In indices
+        'nomsMélangés.Add(nomsCartes(index))
+        'imagesMélangées.Add(imagesCartes(index))
+        'Next
+
+        ' Associer les images aux PictureBox
+        'For i As Integer = 1 To 20
+        'Dim picBoxName As String = "pbxCarte" & i.ToString()
+        'Dim picBox As PictureBox = Me.Controls.Find(picBoxName, True).FirstOrDefault()
+
+        'If picBox IsNot Nothing Then
+        'cartes.Add(picBox)
+        'picBox.Tag = nomsMélangés(i - 1)
+        'imagesAssociees(picBox) = imagesMélangées(i - 1)
+
+        'picBox.Image = My.Resources.BackCardFlags
+        'picBox.SizeMode = PictureBoxSizeMode.Zoom
+        'picBox.Size = New Size(100, 150)
+
+        'AddHandler picBox.Click, AddressOf Carte_Click
+        'End If
+        'Next
+
+        ' Nombre de paires = moitié du nombre de cartes
+        Dim nombrePaires As Integer = nombreCartes \ 2
+
+        imagesCartes.Clear()
+
+        For i As Integer = 0 To nombrePaires - 1
+            ' Ajouter deux fois chaque carte pour créer une paire
+            nomsCartes.Add("Flag" & i)
+            nomsCartes.Add("Flag" & i)
+            imagesCartes.Add(CType(My.Resources.ResourceManager.GetObject("Flag" & i), Image))
+            imagesCartes.Add(CType(My.Resources.ResourceManager.GetObject("Flag" & i), Image))
+        Next
+
+        ' Mélanger les indices
         Dim indices As New List(Of Integer)(Enumerable.Range(0, nomsCartes.Count))
         indices = indices.OrderBy(Function() random.Next()).ToList()
 
@@ -49,7 +109,7 @@ Public Class FormMemory
         Next
 
         ' Associer les images aux PictureBox
-        For i As Integer = 1 To 20
+        For i As Integer = 1 To nombreCartes
             Dim picBoxName As String = "pbxCarte" & i.ToString()
             Dim picBox As PictureBox = Me.Controls.Find(picBoxName, True).FirstOrDefault()
 
@@ -61,10 +121,27 @@ Public Class FormMemory
                 picBox.Image = My.Resources.BackCardFlags
                 picBox.SizeMode = PictureBoxSizeMode.Zoom
                 picBox.Size = New Size(100, 150)
+                picBox.Enabled = True
+                picBox.Visible = True
 
                 AddHandler picBox.Click, AddressOf Carte_Click
             End If
         Next
+
+        ' Cacher les PictureBox non utilisées
+        For i As Integer = nombreCartes + 1 To 32
+            Dim picBoxName As String = "pbxCarte" & i.ToString()
+            Dim picBox As PictureBox = Me.Controls.Find(picBoxName, True).FirstOrDefault()
+            If picBox IsNot Nothing Then
+                picBox.Visible = False
+                picBox.Enabled = False
+            End If
+        Next
+
+
+
+
+
 
         Timer1.Interval = 1000
         Timer1.Start()
@@ -172,4 +249,5 @@ Public Class FormMemory
             Me.Close()
         End If
     End Sub
+
 End Class

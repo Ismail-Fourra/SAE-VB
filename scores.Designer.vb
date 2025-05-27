@@ -30,7 +30,7 @@ Partial Class Scores
         'NameListBox
         '
         Me.NameListBox.FormattingEnabled = True
-        Me.NameListBox.Location = New System.Drawing.Point(138, 73)
+        Me.NameListBox.Location = New System.Drawing.Point(57, 73)
         Me.NameListBox.Name = "NameListBox"
         Me.NameListBox.Size = New System.Drawing.Size(158, 147)
         Me.NameListBox.TabIndex = 0
@@ -38,7 +38,7 @@ Partial Class Scores
         'ScoreListBox
         '
         Me.ScoreListBox.FormattingEnabled = True
-        Me.ScoreListBox.Location = New System.Drawing.Point(490, 73)
+        Me.ScoreListBox.Location = New System.Drawing.Point(308, 73)
         Me.ScoreListBox.Name = "ScoreListBox"
         Me.ScoreListBox.Size = New System.Drawing.Size(158, 147)
         Me.ScoreListBox.TabIndex = 1

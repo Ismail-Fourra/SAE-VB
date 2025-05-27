@@ -1,6 +1,6 @@
 ﻿Public Class Acceuil
     Dim joueursConnus As New List(Of String)
-
+    Friend difficulteChoisie As String = ""
     Private Sub Acceuil_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
         Dim gradientBrush As New Drawing.Drawing2D.LinearGradientBrush(
             Me.ClientRectangle,
@@ -33,6 +33,15 @@
             cbNomJoueur.Items.Add(cbNomJoueur.Text)
         End If
 
+        If rbFacile.Checked Then
+            difficulteChoisie = "Simple"
+        ElseIf rbMoyen.Checked Then
+            difficulteChoisie = "Moyen"
+        ElseIf rbDifficile.Checked Then
+            difficulteChoisie = "Difficile"
+        End If
+
+
         ' Ouvre le jeu
         Dim f As New FormMemory()
         f.NomJoueur = cbNomJoueur.Text
@@ -53,5 +62,9 @@
     Private Sub BtnScores_Click(sender As Object, e As EventArgs) Handles BtnScores.Click
         Scores.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub btnMoyen_CheckedChanged(sender As Object, e As EventArgs) Handles rbMoyen.CheckedChanged
+
     End Sub
 End Class

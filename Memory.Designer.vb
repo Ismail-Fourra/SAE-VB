@@ -80,10 +80,10 @@ Partial Class FormMemory
         'pbxCarte17
         '
         Me.pbxCarte17.BackColor = System.Drawing.Color.Transparent
-        Me.pbxCarte17.Location = New System.Drawing.Point(961, 673)
-        Me.pbxCarte17.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.pbxCarte17.Location = New System.Drawing.Point(721, 547)
+        Me.pbxCarte17.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbxCarte17.Name = "pbxCarte17"
-        Me.pbxCarte17.Size = New System.Drawing.Size(80, 121)
+        Me.pbxCarte17.Size = New System.Drawing.Size(60, 98)
         Me.pbxCarte17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbxCarte17.TabIndex = 62
         Me.pbxCarte17.TabStop = False
@@ -91,10 +91,10 @@ Partial Class FormMemory
         'pbxCarte11
         '
         Me.pbxCarte11.BackColor = System.Drawing.Color.Transparent
-        Me.pbxCarte11.Location = New System.Drawing.Point(272, 673)
-        Me.pbxCarte11.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.pbxCarte11.Location = New System.Drawing.Point(204, 547)
+        Me.pbxCarte11.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbxCarte11.Name = "pbxCarte11"
-        Me.pbxCarte11.Size = New System.Drawing.Size(80, 121)
+        Me.pbxCarte11.Size = New System.Drawing.Size(60, 98)
         Me.pbxCarte11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbxCarte11.TabIndex = 52
         Me.pbxCarte11.TabStop = False
@@ -102,10 +102,10 @@ Partial Class FormMemory
         'pbxCarte3
         '
         Me.pbxCarte3.BackColor = System.Drawing.Color.Transparent
-        Me.pbxCarte3.Location = New System.Drawing.Point(961, 471)
-        Me.pbxCarte3.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.pbxCarte3.Location = New System.Drawing.Point(721, 383)
+        Me.pbxCarte3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbxCarte3.Name = "pbxCarte3"
-        Me.pbxCarte3.Size = New System.Drawing.Size(80, 121)
+        Me.pbxCarte3.Size = New System.Drawing.Size(60, 98)
         Me.pbxCarte3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbxCarte3.TabIndex = 44
         Me.pbxCarte3.TabStop = False
@@ -113,10 +113,10 @@ Partial Class FormMemory
         'pbxCarte1
         '
         Me.pbxCarte1.BackColor = System.Drawing.Color.Transparent
-        Me.pbxCarte1.Location = New System.Drawing.Point(733, 471)
-        Me.pbxCarte1.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.pbxCarte1.Location = New System.Drawing.Point(550, 383)
+        Me.pbxCarte1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbxCarte1.Name = "pbxCarte1"
-        Me.pbxCarte1.Size = New System.Drawing.Size(80, 121)
+        Me.pbxCarte1.Size = New System.Drawing.Size(60, 98)
         Me.pbxCarte1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbxCarte1.TabIndex = 43
         Me.pbxCarte1.TabStop = False
@@ -124,10 +124,10 @@ Partial Class FormMemory
         'pbxCarte12
         '
         Me.pbxCarte12.BackColor = System.Drawing.Color.Transparent
-        Me.pbxCarte12.Location = New System.Drawing.Point(55, 471)
-        Me.pbxCarte12.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.pbxCarte12.Location = New System.Drawing.Point(41, 383)
+        Me.pbxCarte12.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbxCarte12.Name = "pbxCarte12"
-        Me.pbxCarte12.Size = New System.Drawing.Size(80, 121)
+        Me.pbxCarte12.Size = New System.Drawing.Size(60, 98)
         Me.pbxCarte12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbxCarte12.TabIndex = 57
         Me.pbxCarte12.TabStop = False
@@ -135,10 +135,10 @@ Partial Class FormMemory
         'pbxCarte19
         '
         Me.pbxCarte19.BackColor = System.Drawing.Color.Transparent
-        Me.pbxCarte19.Location = New System.Drawing.Point(55, 673)
-        Me.pbxCarte19.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.pbxCarte19.Location = New System.Drawing.Point(41, 547)
+        Me.pbxCarte19.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbxCarte19.Name = "pbxCarte19"
-        Me.pbxCarte19.Size = New System.Drawing.Size(80, 121)
+        Me.pbxCarte19.Size = New System.Drawing.Size(60, 98)
         Me.pbxCarte19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbxCarte19.TabIndex = 59
         Me.pbxCarte19.TabStop = False
@@ -146,20 +146,20 @@ Partial Class FormMemory
         'pbxCarte20
         '
         Me.pbxCarte20.BackColor = System.Drawing.Color.Transparent
-        Me.pbxCarte20.Location = New System.Drawing.Point(733, 673)
-        Me.pbxCarte20.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.pbxCarte20.Location = New System.Drawing.Point(550, 547)
+        Me.pbxCarte20.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbxCarte20.Name = "pbxCarte20"
-        Me.pbxCarte20.Size = New System.Drawing.Size(80, 121)
+        Me.pbxCarte20.Size = New System.Drawing.Size(60, 98)
         Me.pbxCarte20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbxCarte20.TabIndex = 58
         Me.pbxCarte20.TabStop = False
         '
         'BtnAbandonner
         '
-        Me.BtnAbandonner.Location = New System.Drawing.Point(564, 30)
-        Me.BtnAbandonner.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnAbandonner.Location = New System.Drawing.Point(423, 24)
+        Me.BtnAbandonner.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BtnAbandonner.Name = "BtnAbandonner"
-        Me.BtnAbandonner.Size = New System.Drawing.Size(104, 23)
+        Me.BtnAbandonner.Size = New System.Drawing.Size(78, 19)
         Me.BtnAbandonner.TabIndex = 42
         Me.BtnAbandonner.Text = "Abandonner"
         Me.BtnAbandonner.UseVisualStyleBackColor = True
@@ -167,19 +167,20 @@ Partial Class FormMemory
         'LblJoueur
         '
         Me.LblJoueur.AutoSize = True
-        Me.LblJoueur.Location = New System.Drawing.Point(299, 34)
+        Me.LblJoueur.Location = New System.Drawing.Point(224, 28)
+        Me.LblJoueur.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LblJoueur.Name = "LblJoueur"
-        Me.LblJoueur.Size = New System.Drawing.Size(54, 16)
+        Me.LblJoueur.Size = New System.Drawing.Size(45, 13)
         Me.LblJoueur.TabIndex = 41
         Me.LblJoueur.Text = "Joueur :"
         '
         'pbxCarte15
         '
         Me.pbxCarte15.BackColor = System.Drawing.Color.Transparent
-        Me.pbxCarte15.Location = New System.Drawing.Point(505, 673)
-        Me.pbxCarte15.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.pbxCarte15.Location = New System.Drawing.Point(379, 547)
+        Me.pbxCarte15.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbxCarte15.Name = "pbxCarte15"
-        Me.pbxCarte15.Size = New System.Drawing.Size(80, 121)
+        Me.pbxCarte15.Size = New System.Drawing.Size(60, 98)
         Me.pbxCarte15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbxCarte15.TabIndex = 55
         Me.pbxCarte15.TabStop = False
@@ -187,10 +188,10 @@ Partial Class FormMemory
         'pbxCarte6
         '
         Me.pbxCarte6.BackColor = System.Drawing.Color.Transparent
-        Me.pbxCarte6.Location = New System.Drawing.Point(505, 471)
-        Me.pbxCarte6.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.pbxCarte6.Location = New System.Drawing.Point(379, 383)
+        Me.pbxCarte6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbxCarte6.Name = "pbxCarte6"
-        Me.pbxCarte6.Size = New System.Drawing.Size(80, 121)
+        Me.pbxCarte6.Size = New System.Drawing.Size(60, 98)
         Me.pbxCarte6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbxCarte6.TabIndex = 46
         Me.pbxCarte6.TabStop = False
@@ -198,10 +199,10 @@ Partial Class FormMemory
         'pbxCarte18
         '
         Me.pbxCarte18.BackColor = System.Drawing.Color.Transparent
-        Me.pbxCarte18.Location = New System.Drawing.Point(272, 471)
-        Me.pbxCarte18.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.pbxCarte18.Location = New System.Drawing.Point(204, 383)
+        Me.pbxCarte18.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbxCarte18.Name = "pbxCarte18"
-        Me.pbxCarte18.Size = New System.Drawing.Size(80, 121)
+        Me.pbxCarte18.Size = New System.Drawing.Size(60, 98)
         Me.pbxCarte18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbxCarte18.TabIndex = 60
         Me.pbxCarte18.TabStop = False
@@ -209,19 +210,20 @@ Partial Class FormMemory
         'LblTemps
         '
         Me.LblTemps.AutoSize = True
-        Me.LblTemps.Location = New System.Drawing.Point(89, 34)
+        Me.LblTemps.Location = New System.Drawing.Point(67, 28)
+        Me.LblTemps.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LblTemps.Name = "LblTemps"
-        Me.LblTemps.Size = New System.Drawing.Size(80, 16)
+        Me.LblTemps.Size = New System.Drawing.Size(65, 13)
         Me.LblTemps.TabIndex = 40
         Me.LblTemps.Text = "Temps : 60s"
         '
         'pbxCarte2
         '
         Me.pbxCarte2.BackColor = System.Drawing.Color.Transparent
-        Me.pbxCarte2.Location = New System.Drawing.Point(505, 286)
-        Me.pbxCarte2.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.pbxCarte2.Location = New System.Drawing.Point(379, 232)
+        Me.pbxCarte2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbxCarte2.Name = "pbxCarte2"
-        Me.pbxCarte2.Size = New System.Drawing.Size(80, 121)
+        Me.pbxCarte2.Size = New System.Drawing.Size(60, 98)
         Me.pbxCarte2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbxCarte2.TabIndex = 45
         Me.pbxCarte2.TabStop = False
@@ -229,10 +231,10 @@ Partial Class FormMemory
         'pbxCarte16
         '
         Me.pbxCarte16.BackColor = System.Drawing.Color.Transparent
-        Me.pbxCarte16.Location = New System.Drawing.Point(961, 286)
-        Me.pbxCarte16.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.pbxCarte16.Location = New System.Drawing.Point(721, 232)
+        Me.pbxCarte16.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbxCarte16.Name = "pbxCarte16"
-        Me.pbxCarte16.Size = New System.Drawing.Size(80, 121)
+        Me.pbxCarte16.Size = New System.Drawing.Size(60, 98)
         Me.pbxCarte16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbxCarte16.TabIndex = 61
         Me.pbxCarte16.TabStop = False
@@ -240,10 +242,10 @@ Partial Class FormMemory
         'pbxCarte5
         '
         Me.pbxCarte5.BackColor = System.Drawing.Color.Transparent
-        Me.pbxCarte5.Location = New System.Drawing.Point(55, 95)
-        Me.pbxCarte5.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.pbxCarte5.Location = New System.Drawing.Point(41, 77)
+        Me.pbxCarte5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbxCarte5.Name = "pbxCarte5"
-        Me.pbxCarte5.Size = New System.Drawing.Size(80, 121)
+        Me.pbxCarte5.Size = New System.Drawing.Size(60, 98)
         Me.pbxCarte5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbxCarte5.TabIndex = 49
         Me.pbxCarte5.TabStop = False
@@ -251,10 +253,10 @@ Partial Class FormMemory
         'pbxCarte9
         '
         Me.pbxCarte9.BackColor = System.Drawing.Color.Transparent
-        Me.pbxCarte9.Location = New System.Drawing.Point(272, 95)
-        Me.pbxCarte9.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.pbxCarte9.Location = New System.Drawing.Point(204, 77)
+        Me.pbxCarte9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbxCarte9.Name = "pbxCarte9"
-        Me.pbxCarte9.Size = New System.Drawing.Size(80, 121)
+        Me.pbxCarte9.Size = New System.Drawing.Size(60, 98)
         Me.pbxCarte9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbxCarte9.TabIndex = 50
         Me.pbxCarte9.TabStop = False
@@ -262,10 +264,10 @@ Partial Class FormMemory
         'pbxCarte8
         '
         Me.pbxCarte8.BackColor = System.Drawing.Color.Transparent
-        Me.pbxCarte8.Location = New System.Drawing.Point(505, 95)
-        Me.pbxCarte8.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.pbxCarte8.Location = New System.Drawing.Point(379, 77)
+        Me.pbxCarte8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbxCarte8.Name = "pbxCarte8"
-        Me.pbxCarte8.Size = New System.Drawing.Size(80, 121)
+        Me.pbxCarte8.Size = New System.Drawing.Size(60, 98)
         Me.pbxCarte8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbxCarte8.TabIndex = 51
         Me.pbxCarte8.TabStop = False
@@ -273,10 +275,10 @@ Partial Class FormMemory
         'pbxCarte14
         '
         Me.pbxCarte14.BackColor = System.Drawing.Color.Transparent
-        Me.pbxCarte14.Location = New System.Drawing.Point(733, 286)
-        Me.pbxCarte14.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.pbxCarte14.Location = New System.Drawing.Point(550, 232)
+        Me.pbxCarte14.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbxCarte14.Name = "pbxCarte14"
-        Me.pbxCarte14.Size = New System.Drawing.Size(80, 121)
+        Me.pbxCarte14.Size = New System.Drawing.Size(60, 98)
         Me.pbxCarte14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbxCarte14.TabIndex = 56
         Me.pbxCarte14.TabStop = False
@@ -284,10 +286,10 @@ Partial Class FormMemory
         'pbxCarte10
         '
         Me.pbxCarte10.BackColor = System.Drawing.Color.Transparent
-        Me.pbxCarte10.Location = New System.Drawing.Point(733, 95)
-        Me.pbxCarte10.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.pbxCarte10.Location = New System.Drawing.Point(550, 77)
+        Me.pbxCarte10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbxCarte10.Name = "pbxCarte10"
-        Me.pbxCarte10.Size = New System.Drawing.Size(80, 121)
+        Me.pbxCarte10.Size = New System.Drawing.Size(60, 98)
         Me.pbxCarte10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbxCarte10.TabIndex = 53
         Me.pbxCarte10.TabStop = False
@@ -295,10 +297,10 @@ Partial Class FormMemory
         'pbxCarte4
         '
         Me.pbxCarte4.BackColor = System.Drawing.Color.Transparent
-        Me.pbxCarte4.Location = New System.Drawing.Point(961, 95)
-        Me.pbxCarte4.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.pbxCarte4.Location = New System.Drawing.Point(721, 77)
+        Me.pbxCarte4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbxCarte4.Name = "pbxCarte4"
-        Me.pbxCarte4.Size = New System.Drawing.Size(80, 121)
+        Me.pbxCarte4.Size = New System.Drawing.Size(60, 98)
         Me.pbxCarte4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbxCarte4.TabIndex = 48
         Me.pbxCarte4.TabStop = False
@@ -306,10 +308,10 @@ Partial Class FormMemory
         'pbxCarte13
         '
         Me.pbxCarte13.BackColor = System.Drawing.Color.Transparent
-        Me.pbxCarte13.Location = New System.Drawing.Point(55, 286)
-        Me.pbxCarte13.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.pbxCarte13.Location = New System.Drawing.Point(41, 232)
+        Me.pbxCarte13.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbxCarte13.Name = "pbxCarte13"
-        Me.pbxCarte13.Size = New System.Drawing.Size(80, 121)
+        Me.pbxCarte13.Size = New System.Drawing.Size(60, 98)
         Me.pbxCarte13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbxCarte13.TabIndex = 54
         Me.pbxCarte13.TabStop = False
@@ -317,10 +319,10 @@ Partial Class FormMemory
         'pbxCarte7
         '
         Me.pbxCarte7.BackColor = System.Drawing.Color.Transparent
-        Me.pbxCarte7.Location = New System.Drawing.Point(272, 286)
-        Me.pbxCarte7.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.pbxCarte7.Location = New System.Drawing.Point(204, 232)
+        Me.pbxCarte7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbxCarte7.Name = "pbxCarte7"
-        Me.pbxCarte7.Size = New System.Drawing.Size(80, 121)
+        Me.pbxCarte7.Size = New System.Drawing.Size(60, 98)
         Me.pbxCarte7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbxCarte7.TabIndex = 47
         Me.pbxCarte7.TabStop = False
@@ -328,19 +330,20 @@ Partial Class FormMemory
         'lblNomJoueur
         '
         Me.lblNomJoueur.AutoSize = True
-        Me.lblNomJoueur.Location = New System.Drawing.Point(398, 34)
+        Me.lblNomJoueur.Location = New System.Drawing.Point(298, 28)
+        Me.lblNomJoueur.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblNomJoueur.Name = "lblNomJoueur"
-        Me.lblNomJoueur.Size = New System.Drawing.Size(55, 16)
+        Me.lblNomJoueur.Size = New System.Drawing.Size(55, 13)
         Me.lblNomJoueur.TabIndex = 63
         Me.lblNomJoueur.Text = "                "
         '
         'FormMemory
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.SAE_VB.My.Resources.Resources.Fond_MemoryFlags
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1192, 956)
+        Me.ClientSize = New System.Drawing.Size(894, 777)
         Me.Controls.Add(Me.lblNomJoueur)
         Me.Controls.Add(Me.pbxCarte17)
         Me.Controls.Add(Me.pbxCarte11)
@@ -365,7 +368,7 @@ Partial Class FormMemory
         Me.Controls.Add(Me.pbxCarte4)
         Me.Controls.Add(Me.pbxCarte13)
         Me.Controls.Add(Me.pbxCarte7)
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "FormMemory"
         Me.Text = "Memory"
         CType(Me.pbxCarte17, System.ComponentModel.ISupportInitialize).EndInit()
