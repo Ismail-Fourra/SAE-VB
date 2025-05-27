@@ -13,7 +13,7 @@ Public Class FormMemory
     Private tentativeRatée As Boolean = False
     Private nbCliques As Integer = 0
     Private player As New System.Media.SoundPlayer(My.Resources.Maroc_song1)
-
+    Private nbCarteAtraitter As Integer
     Private imagesAssociees As New Dictionary(Of PictureBox, Image)()
 
     Public Property NomJoueur As String
@@ -35,12 +35,16 @@ Public Class FormMemory
             Case "simple"
                 nombreCartes = 10
                 tempsRestant = 60
+                nbCarteAtraitter = 2
             Case "moyen"
-                nombreCartes = 28
+                nombreCartes = 20
                 tempsRestant = 90
+                nbCarteAtraitter = 4
             Case "difficile"
                 nombreCartes = 32
                 tempsRestant = 105
+                nbCarteAtraitter = 4
+
         End Select
 
         LblTemps.Text = "Temps : " & tempsRestant
@@ -84,16 +88,17 @@ Public Class FormMemory
         'Next
 
         ' Nombre de paires = moitié du nombre de cartes
-        Dim nombrePaires As Integer = nombreCartes \ 2
+        Dim nombrePaires As Integer = nombreCartes \ nbCarteAtraitter
 
         imagesCartes.Clear()
 
         For i As Integer = 0 To nombrePaires - 1
             ' Ajouter deux fois chaque carte pour créer une paire
-            nomsCartes.Add("Flag" & i)
-            nomsCartes.Add("Flag" & i)
-            imagesCartes.Add(CType(My.Resources.ResourceManager.GetObject("Flag" & i), Image))
-            imagesCartes.Add(CType(My.Resources.ResourceManager.GetObject("Flag" & i), Image))
+            For j As Integer = 0 To nbCarteAtraitter - 1
+                nomsCartes.Add("Flag" & i)
+                imagesCartes.Add(CType(My.Resources.ResourceManager.GetObject("Flag" & i), Image))
+
+            Next
         Next
 
         ' Mélanger les indices
@@ -198,8 +203,9 @@ Public Class FormMemory
             Timer2.Start()
         End If
 
-        If cartesRevelees.Count = 4 AndAlso sontIdentiques Then
+        If cartesRevelees.Count = nbCarteAtraitter AndAlso sontIdentiques Then
             ' ✅ Stopper la musique si elle joue déjà
+            MsgBox(cartesRevelees(0).Tag.ToString())
             player.Stop()
 
             ' ✅ Jouer la musique
@@ -250,4 +256,7 @@ Public Class FormMemory
         End If
     End Sub
 
+    Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles pbxCarte29.Click
+
+    End Sub
 End Class
