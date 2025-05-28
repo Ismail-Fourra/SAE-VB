@@ -36,7 +36,7 @@ Public Class FormMemory
         'Met la bonne difficulté
         Select Case Acceuil.difficulteChoisie.ToLower()
             Case "simple"
-                nombreCartes = 10
+                nombreCartes = 16
                 tempsRestant = 60
                 nbCarteAtraitter = 2
             Case "moyen"
