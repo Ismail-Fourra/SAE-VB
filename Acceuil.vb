@@ -64,7 +64,8 @@
         Me.Hide()
     End Sub
 
-    Private Sub btnMoyen_CheckedChanged(sender As Object, e As EventArgs) Handles rbMoyen.CheckedChanged
-
+    Private Sub btnParametres_Click(sender As Object, e As EventArgs) Handles BtnParamètres.Click
+        Dim paramètres As New FormParametres()
+        paramètres.ShowDialog() ' Affiche le formulaire en modal
     End Sub
 End Class

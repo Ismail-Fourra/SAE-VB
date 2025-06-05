@@ -80,6 +80,12 @@
       <DependentUpon>Acceuil.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Parametres.Designer.vb">
+      <DependentUpon>Parametres.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Parametres.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GestionScores.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -113,6 +119,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Acceuil.resx">
       <DependentUpon>Acceuil.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parametres.resx">
+      <DependentUpon>Parametres.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Memory.resx">
       <DependentUpon>Memory.vb</DependentUpon>
