@@ -263,7 +263,7 @@ Public Class FormMemory
 
             Dim tempsJoué As Integer = 60 - tempsRestant
             MsgBox("🎉 Réussi en " & tempsJoué & " secondes !")
-            GestionScores.EnregistrerScore(NomJoueur, tempsJoué)
+            Data.EnregistrerScore(NomJoueur, tempsJoué)
             ' Retour à l'accueil
             Me.Close()
             Acceuil.Show()

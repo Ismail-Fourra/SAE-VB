@@ -80,13 +80,13 @@
       <DependentUpon>Acceuil.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Data.vb" />
     <Compile Include="Parametres.Designer.vb">
       <DependentUpon>Parametres.vb</DependentUpon>
     </Compile>
     <Compile Include="Parametres.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GestionScores.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
