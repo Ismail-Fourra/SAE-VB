@@ -115,6 +115,33 @@
 
     End Sub
 
+    Private Sub CbEffetsSonores_CheckedChanged(sender As Object, e As EventArgs) Handles CbEffetsSonores.CheckedChanged
+        If CbEffetsSonores.Checked Then
+            CbMusique.Enabled = True
+            BtnApercuMusique.Enabled = True
+
+            If CbMusique.Items.Count = 0 Then
+                CbMusique.Items.AddRange(New String() {
+                "French Song", "Brasil Song", "Moroccan Song", "Spanish Song", "American Song"
+            })
+            End If
+
+            If Not String.IsNullOrEmpty(My.Settings.Musique) Then
+                CbMusique.SelectedItem = My.Settings.Musique
+            Else
+                CbMusique.SelectedIndex = 0
+            End If
+
+        Else
+            ' Désactiver et vider les options
+            CbMusique.Items.Clear()
+            CbMusique.Text = ""
+            CbMusique.Enabled = False
+            BtnApercuMusique.Enabled = False
+        End If
+    End Sub
+
+
     Private Sub btnRetour_Click(sender As Object, e As EventArgs) Handles BtnRetour.Click
         Me.Close()
     End Sub

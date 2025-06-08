@@ -1,14 +1,6 @@
 ﻿Public Class Acceuil
     Dim joueursConnus As New List(Of String)
     Friend difficulteChoisie As String = ""
-    Private Sub Acceuil_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
-        Dim gradientBrush As New Drawing.Drawing2D.LinearGradientBrush(
-            Me.ClientRectangle,
-            Color.FromArgb(255, 255, 150),
-            Color.FromArgb(255, 100, 100),
-            90.0F)
-        e.Graphics.FillRectangle(gradientBrush, Me.ClientRectangle)
-    End Sub
 
     Private Sub Acceuil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cbNomJoueur.Items.Clear()

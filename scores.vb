@@ -22,7 +22,7 @@
                 ListBoxNom.Items.Add(nom)
                 CbNom.Items.Add(nom)
                 ListBoxScore.Items.Add(getScore(nom))
-                ListBoxScore.Items.Add(getScoreC(nom))
+                ListBoxTpsCumule.Items.Add(getScore(nom))
                 ListBoxTemps.Items.Add(getTemps(nom))
                 ListBoxNbPartie.Items.Add(getNbPartieJ(nom))
             Next
