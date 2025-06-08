@@ -247,15 +247,16 @@ Public Class FormMemory
             Timer2.Start()
         End If
 
-
-        ' ✅ Valider définitivement les cartes
-        For Each carte In cartesRevelees
+        If cartesRevelees.Count = nbCarteAtraitter AndAlso sontIdentiques Then
+            ' ✅ Valider définitivement les cartes
+            For Each carte In cartesRevelees
                 carte.Enabled = False
                 carte.Image = ToGrayScale(CType(carte.Image, Bitmap))
                 cartesTrouvees.Add(carte)
             Next
             cartesRevelees.Clear()
-        tentativeRatée = False
+            tentativeRatée = False
+        End If
 
         If cartesTrouvees.Count = cartes.Count Then
             Timer1.Stop() ' Arrêter le chrono si gagné
