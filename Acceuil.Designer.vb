@@ -30,12 +30,12 @@ Partial Class Acceuil
         Me.LblNom = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblJeuMemory = New System.Windows.Forms.Label()
-        Me.BtnParamètres = New System.Windows.Forms.Button()
         Me.rbFacile = New System.Windows.Forms.RadioButton()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.rbMoyen = New System.Windows.Forms.RadioButton()
         Me.rbDifficile = New System.Windows.Forms.RadioButton()
         Me.LabelDifficulte = New System.Windows.Forms.Label()
+        Me.BtnParamètres = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
@@ -88,6 +88,7 @@ Partial Class Acceuil
         'LblNom
         '
         Me.LblNom.AutoSize = True
+        Me.LblNom.BackColor = System.Drawing.Color.Transparent
         Me.LblNom.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblNom.Location = New System.Drawing.Point(277, 208)
         Me.LblNom.Name = "LblNom"
@@ -97,6 +98,7 @@ Partial Class Acceuil
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Panel1.Controls.Add(Me.BtnJouer)
         Me.Panel1.Controls.Add(Me.BtnScores)
         Me.Panel1.Controls.Add(Me.BtnQuitter)
@@ -109,13 +111,72 @@ Partial Class Acceuil
         'lblJeuMemory
         '
         Me.lblJeuMemory.AutoSize = True
+        Me.lblJeuMemory.BackColor = System.Drawing.Color.Transparent
         Me.lblJeuMemory.Font = New System.Drawing.Font("Impact", 36.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblJeuMemory.ForeColor = System.Drawing.Color.White
+        Me.lblJeuMemory.ForeColor = System.Drawing.SystemColors.ActiveCaption
         Me.lblJeuMemory.Location = New System.Drawing.Point(187, 80)
         Me.lblJeuMemory.Name = "lblJeuMemory"
         Me.lblJeuMemory.Size = New System.Drawing.Size(398, 75)
         Me.lblJeuMemory.TabIndex = 7
         Me.lblJeuMemory.Text = "Jeu du Memory"
+        '
+        'rbFacile
+        '
+        Me.rbFacile.AutoSize = True
+        Me.rbFacile.Checked = True
+        Me.rbFacile.Location = New System.Drawing.Point(4, 4)
+        Me.rbFacile.Margin = New System.Windows.Forms.Padding(4)
+        Me.rbFacile.Name = "rbFacile"
+        Me.rbFacile.Size = New System.Drawing.Size(65, 20)
+        Me.rbFacile.TabIndex = 9
+        Me.rbFacile.TabStop = True
+        Me.rbFacile.Text = "Facile"
+        Me.rbFacile.UseVisualStyleBackColor = True
+        '
+        'FlowLayoutPanel1
+        '
+        Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.Transparent
+        Me.FlowLayoutPanel1.Controls.Add(Me.rbFacile)
+        Me.FlowLayoutPanel1.Controls.Add(Me.rbMoyen)
+        Me.FlowLayoutPanel1.Controls.Add(Me.rbDifficile)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(245, 331)
+        Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(4)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(257, 31)
+        Me.FlowLayoutPanel1.TabIndex = 5
+        '
+        'rbMoyen
+        '
+        Me.rbMoyen.AutoSize = True
+        Me.rbMoyen.Location = New System.Drawing.Point(77, 4)
+        Me.rbMoyen.Margin = New System.Windows.Forms.Padding(4)
+        Me.rbMoyen.Name = "rbMoyen"
+        Me.rbMoyen.Size = New System.Drawing.Size(69, 20)
+        Me.rbMoyen.TabIndex = 9
+        Me.rbMoyen.Text = "Moyen"
+        Me.rbMoyen.UseVisualStyleBackColor = True
+        '
+        'rbDifficile
+        '
+        Me.rbDifficile.AutoSize = True
+        Me.rbDifficile.Location = New System.Drawing.Point(154, 4)
+        Me.rbDifficile.Margin = New System.Windows.Forms.Padding(4)
+        Me.rbDifficile.Name = "rbDifficile"
+        Me.rbDifficile.Size = New System.Drawing.Size(71, 20)
+        Me.rbDifficile.TabIndex = 10
+        Me.rbDifficile.Text = "Difficile"
+        Me.rbDifficile.UseVisualStyleBackColor = True
+        '
+        'LabelDifficulte
+        '
+        Me.LabelDifficulte.AutoSize = True
+        Me.LabelDifficulte.BackColor = System.Drawing.Color.Transparent
+        Me.LabelDifficulte.Location = New System.Drawing.Point(332, 298)
+        Me.LabelDifficulte.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LabelDifficulte.Name = "LabelDifficulte"
+        Me.LabelDifficulte.Size = New System.Drawing.Size(63, 16)
+        Me.LabelDifficulte.TabIndex = 9
+        Me.LabelDifficulte.Text = "Difficulté :"
         '
         'BtnParamètres
         '
@@ -131,67 +192,12 @@ Partial Class Acceuil
         Me.BtnParamètres.TabIndex = 8
         Me.BtnParamètres.UseVisualStyleBackColor = False
         '
-        'rbFacile
-        '
-        Me.rbFacile.AutoSize = True
-        Me.rbFacile.Checked = True
-        Me.rbFacile.Location = New System.Drawing.Point(4, 4)
-        Me.rbFacile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.rbFacile.Name = "rbFacile"
-        Me.rbFacile.Size = New System.Drawing.Size(65, 20)
-        Me.rbFacile.TabIndex = 9
-        Me.rbFacile.TabStop = True
-        Me.rbFacile.Text = "Facile"
-        Me.rbFacile.UseVisualStyleBackColor = True
-        '
-        'FlowLayoutPanel1
-        '
-        Me.FlowLayoutPanel1.Controls.Add(Me.rbFacile)
-        Me.FlowLayoutPanel1.Controls.Add(Me.rbMoyen)
-        Me.FlowLayoutPanel1.Controls.Add(Me.rbDifficile)
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(245, 331)
-        Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(257, 31)
-        Me.FlowLayoutPanel1.TabIndex = 5
-        '
-        'rbMoyen
-        '
-        Me.rbMoyen.AutoSize = True
-        Me.rbMoyen.Location = New System.Drawing.Point(77, 4)
-        Me.rbMoyen.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.rbMoyen.Name = "rbMoyen"
-        Me.rbMoyen.Size = New System.Drawing.Size(69, 20)
-        Me.rbMoyen.TabIndex = 9
-        Me.rbMoyen.Text = "Moyen"
-        Me.rbMoyen.UseVisualStyleBackColor = True
-        '
-        'rbDifficile
-        '
-        Me.rbDifficile.AutoSize = True
-        Me.rbDifficile.Location = New System.Drawing.Point(154, 4)
-        Me.rbDifficile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.rbDifficile.Name = "rbDifficile"
-        Me.rbDifficile.Size = New System.Drawing.Size(71, 20)
-        Me.rbDifficile.TabIndex = 10
-        Me.rbDifficile.Text = "Difficile"
-        Me.rbDifficile.UseVisualStyleBackColor = True
-        '
-        'LabelDifficulte
-        '
-        Me.LabelDifficulte.AutoSize = True
-        Me.LabelDifficulte.Location = New System.Drawing.Point(332, 298)
-        Me.LabelDifficulte.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.LabelDifficulte.Name = "LabelDifficulte"
-        Me.LabelDifficulte.Size = New System.Drawing.Size(63, 16)
-        Me.LabelDifficulte.TabIndex = 9
-        Me.LabelDifficulte.Text = "Difficulté :"
-        '
         'Acceuil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.BackgroundImage = Global.SAE_VB.My.Resources.Resources.Fond_MemoryFlags
         Me.ClientSize = New System.Drawing.Size(781, 553)
         Me.Controls.Add(Me.LabelDifficulte)
         Me.Controls.Add(Me.FlowLayoutPanel1)

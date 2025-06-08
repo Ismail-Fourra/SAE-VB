@@ -136,28 +136,49 @@
   <data name="Flag4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Flag4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-	<data name="Flag5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-		<value>..\Resources\Flag5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-	</data>
-<data name="Flag6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-	<value>..\Resources\Flag6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-</data>
-	<data name="Flag7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-		<value>..\Resources\Flag7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-	</data>
+  <data name="Flag5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Flag5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Flag6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Flag6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Flag7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Flag7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Fond_MemoryFlags" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Fond MemoryFlags.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Flag1Song" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Flag1Song.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-	<data name="Flag2Song" type="System.Resources.ResXFileRef, System.Windows.Forms">
-		<value>..\Resources\Flag2Song.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</data>
-	<data name="Flag7Song" type="System.Resources.ResXFileRef, System.Windows.Forms">
-		<value>..\Resources\Flag7Song.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</data>
   <data name="parametres" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\parametres-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="African_Theme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\African Theme.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Asian_Theme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Asian Theme.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Europe_Theme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Europe Theme.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sahara_Theme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sahara Theme.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="South_American_Theme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\South American Theme.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="American_Song" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\American Song.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Brasil_Song" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Brasil Song.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="French_Song" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\French Song.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Moroccan_Song" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Moroccan Song.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Spain_Song" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Spain Song.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

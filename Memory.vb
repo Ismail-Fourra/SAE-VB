@@ -3,6 +3,9 @@ Imports System.Linq
 
 Public Class FormMemory
 
+    Private musicPlayer As System.Media.SoundPlayer
+
+
     Private imagesCartes As New List(Of Image)()
     Private random As New Random()
     Private cartes As New List(Of PictureBox)()
@@ -12,19 +15,55 @@ Public Class FormMemory
     Private cartesTrouvees As New List(Of PictureBox)()
     Private tentativeRatée As Boolean = False
     Private nbCliques As Integer = 0
-    Private player As New System.Media.SoundPlayer(My.Resources.Flag1Song)
     Private nbCarteAtraitter As Integer
     Private imagesAssociees As New Dictionary(Of PictureBox, Image)()
 
     Public Property NomJoueur As String
 
     Private Sub FormMemory_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Select Case My.Settings.Theme
+            Case "Europe"
+                Me.BackgroundImage = My.Resources.Europe_Theme
+            Case "SouthAmerican"
+                Me.BackgroundImage = My.Resources.South_American_Theme
+            Case "Asian"
+                Me.BackgroundImage = My.Resources.Asian_Theme
+            Case "Sahara"
+                Me.BackgroundImage = My.Resources.Sahara_Theme
+            Case "African"
+                Me.BackgroundImage = My.Resources.African_Theme
+            Case Else
+                Me.BackgroundImage = Nothing
+        End Select
+
+        Me.BackgroundImageLayout = ImageLayout.Stretch
+
+        Select Case My.Settings.Musique
+            Case "French Song"
+                musicPlayer = New System.Media.SoundPlayer(My.Resources.French_Song)
+            Case "American Song"
+                musicPlayer = New System.Media.SoundPlayer(My.Resources.American_Song)
+            Case "Brasil Song"
+                musicPlayer = New System.Media.SoundPlayer(My.Resources.Brasil_Song)
+            Case "Moroccan Song"
+                musicPlayer = New System.Media.SoundPlayer(My.Resources.Moroccan_Song)
+            Case "Spanish Song"
+                musicPlayer = New System.Media.SoundPlayer(My.Resources.Spain_Song)
+            Case Else
+                musicPlayer = Nothing
+        End Select
+
+        If musicPlayer IsNot Nothing AndAlso My.Settings.Volume > 0 Then
+            musicPlayer.PlayLooping()
+        End If
+
+
         imagesCartes.Clear()
         cartes.Clear()
         cartesRevelees.Clear()
         cartesTrouvees.Clear()
         imagesAssociees.Clear()
-        player.Stop()
         Timer1.Stop()
         Timer2.Stop()
 
@@ -208,43 +247,15 @@ Public Class FormMemory
             Timer2.Start()
         End If
 
-        If cartesRevelees.Count = nbCarteAtraitter AndAlso sontIdentiques Then
 
-            Select Case cartesRevelees(0).Tag
-                Case "Flag0"
-                    ' Action spécifique pour Flag0
-                    'player = New System.Media.SoundPlayer(My.Resources.Flag0Song)
-                Case "Flag1"
-                    ' Action spécifique pour Flag1 ...
-                    player = New System.Media.SoundPlayer(My.Resources.Flag1Song)
-                Case "Flag2"
-                    player = New System.Media.SoundPlayer(My.Resources.Flag2Song)
-                Case "Flag3"
-                   ' player = New System.Media.SoundPlayer(My.Resources.Flag3Song)
-                Case "Flag4"
-                    'player = New System.Media.SoundPlayer(My.Resources.Flag4Song)
-                Case "Flag5"
-                    'player = New System.Media.SoundPlayer(My.Resources.Flag5Song)
-                Case "Flag6"
-                    'player = New System.Media.SoundPlayer(My.Resources.Flag6Song)
-                Case "Flag7"
-                    player = New System.Media.SoundPlayer(My.Resources.Flag7Song)
-            End Select
-            ' ✅ Stopper la musique si elle joue déjà
-            player.Stop()
-
-            ' ✅ Jouer la musique
-            player.Play()
-
-            ' ✅ Valider définitivement les cartes
-            For Each carte In cartesRevelees
+        ' ✅ Valider définitivement les cartes
+        For Each carte In cartesRevelees
                 carte.Enabled = False
                 carte.Image = ToGrayScale(CType(carte.Image, Bitmap))
                 cartesTrouvees.Add(carte)
             Next
             cartesRevelees.Clear()
-            tentativeRatée = False
-        End If
+        tentativeRatée = False
 
         If cartesTrouvees.Count = cartes.Count Then
             Timer1.Stop() ' Arrêter le chrono si gagné
@@ -280,11 +291,14 @@ Public Class FormMemory
             Me.Close()
         End If
 
+        If musicPlayer IsNot Nothing Then
+            musicPlayer.Stop()
+        End If
+
+
     End Sub
 
-    Private Sub PictureBox6_Click(sender As Object, e As EventArgs) Handles pbxCarte29.Click
 
-    End Sub
 
     Private Sub FormMemory_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         imagesCartes.Clear()
@@ -292,8 +306,12 @@ Public Class FormMemory
         cartesRevelees.Clear()
         cartesTrouvees.Clear()
         imagesAssociees.Clear()
-        player.Stop()
         Timer1.Stop()
         Timer2.Stop()
+
+        If musicPlayer IsNot Nothing Then
+            musicPlayer.Stop()
+        End If
+
     End Sub
 End Class

@@ -150,6 +150,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="acceuil.ico" />
+    <None Include="Resources\French Song.wav" />
+    <None Include="Resources\Spain Song.wav" />
+    <None Include="Resources\Moroccan Song.wav" />
+    <None Include="Resources\South American Theme.png" />
+    <None Include="Resources\Sahara Theme.png" />
+    <None Include="Resources\African Theme.png" />
+    <None Include="Resources\Asian Theme.png" />
+    <None Include="Resources\Europe Theme.png" />
+    <None Include="Resources\American Song.wav" />
+    <None Include="Resources\Brasil Song.wav" />
     <Content Include="Resources\Flag2Song.wav" />
     <Content Include="Resources\Flag5.png" />
     <Content Include="Resources\Flag7.png" />
